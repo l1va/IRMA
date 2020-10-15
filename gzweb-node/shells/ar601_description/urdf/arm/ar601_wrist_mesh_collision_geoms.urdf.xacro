@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LWrist1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LWrist1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro>
+
+<xacro:macro name="RWrist1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RWrist1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LWrist2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LWrist2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro>
+
+<xacro:macro name="RWrist2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RWrist2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger1_1_collision_geom_macro">
+<collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger1_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger1_1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger1_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger1_2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger1_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger1_2_collision_geom_macro">    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger1_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger2_1_collision_geom_macro">    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger2_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger2_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger2_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger2_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger2_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger2_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger2_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger2_3_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger2_3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger2_3_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger2_3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger3_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger3_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger3_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger3_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger3_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger3_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger3_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger3_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger3_3_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger3_3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger3_3_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger3_3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger4_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger4_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger4_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger4_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger4_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger4_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger4_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger4_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger4_3_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger4_3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger4_3_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger4_3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger5_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger5_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger5_1_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger5_1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFinger5_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LFinger5_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFinger5_2_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RFinger5_2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+
+
+</robot>

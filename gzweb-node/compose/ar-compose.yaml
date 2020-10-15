@@ -1,0 +1,51 @@
+version: '2.2'
+services:
+  gzweb-node-1.1:
+    image: gzweb
+    depends_on: 
+      - robo-1.1
+
+    restart: on-failure
+
+    mem_limit: 1G
+    ports:
+      - '8000:8000'
+      - '8080:8080'
+    entrypoint: /home/robo/start.sh
+    environment:
+      - 'ROS_MASTER_URI=http://robo-1.1:11346'
+      - 'GAZEBO_MASTER_URI=http://robo-1.1:11345'
+      - 'DOMAIN=  '
+      - 'PORT_EDITOR=8000'
+    volumes:
+      - /IRMA/gzweb-node/robo:/home/robo:ro
+      - /IRMA/code_editor:/home/code_editor:ro
+      - /IRMA/gzweb-node/gzweb:/home/gzweb:ro
+
+      - /IRMA/gzweb-node/shells/ar601_description:/home/gzweb/http/client/assets/ar601_description:ro
+
+      - editor-user-1:/home/editor
+      - project_x-user-1:/home/catkin_ws/src/project_x
+    networks:
+      - net
+
+  robo-1.1:
+    image: robo-ar601:1.1
+
+    entrypoint: /home/robo/start.sh
+
+    environment:
+      - 'ROS_MASTER_URI=http://localhost:11346'
+      - 'GAZEBO_MASTER_URI=http://localhost:11345'
+
+    volumes:
+      - /IRMA/gzweb-node/ros-robo/ar601:/home/robo:ro
+
+
+    mem_limit: 4G
+
+    networks:
+      - net
+
+networks:
+  net:

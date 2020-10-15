@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LShoulder1_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder1_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder2_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder2_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder3_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder3_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="LElbow_inertial_macro">
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="RElbow_inertial_macro">    
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="LArm_inertial_macro">    
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+<xacro:macro name="RArm_inertial_macro"> 
+  <inertial_constant_macro/>
+</xacro:macro> 
+
+
+
+</robot>

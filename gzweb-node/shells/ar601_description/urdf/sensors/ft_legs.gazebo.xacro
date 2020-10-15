@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot name="ar601">
+
+    <!--   <gazebo reference="LFoot">
+        <sensor name="LFoot_sensor" type="contact">
+        <always_on>true</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>LFoot_collision</collision>
+        </contact>
+        <plugin name="LFoot_bumper" filename="libgazebo_ros_bumper.so">
+          <bumperTopicName>LFoot_contact</bumperTopicName>
+          <frameName>LFoot_frame</frameName>
+        </plugin>
+        </sensor>
+      </gazebo>
+
+      <gazebo reference="RFoot">
+        <sensor name="RFoot_sensor" type="contact">
+        <always_on>true</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>RFoot_collision</collision>
+        </contact>
+        <plugin name="RFoot_bumper" filename="libgazebo_ros_bumper.so">
+          <bumperTopicName>RFoot_contact</bumperTopicName>
+          <frameName>RFoot_frame</frameName>
+        </plugin>
+        </sensor>
+      </gazebo> -->
+
+
+    <gazebo reference="RAnkleRoll">
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    <gazebo reference="LAnkleRoll">
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <!-- The ft_sensor plugin  The wrench is reported in the CHILD <frame Force and torque of foot acting on joint in foot cs>-->
+    <gazebo>
+        <plugin name="ft_sensorR" filename="libgazebo_ros_ft_sensor.so">
+            <updateRate>250.0</updateRate>
+            <topicName>ar601/RAnkleRoll_ft</topicName>
+            <jointName>RAnkleRoll</jointName>
+            <gaussianNoise>0.0</gaussianNoise>
+        </plugin>
+    </gazebo>
+    <gazebo>
+        <plugin name="ft_sensorL" filename="libgazebo_ros_ft_sensor.so">
+            <updateRate>250.0</updateRate>
+            <topicName>ar601/LAnkleRoll_ft</topicName>
+            <jointName>LAnkleRoll</jointName>
+            <gaussianNoise>0.0</gaussianNoise>
+        </plugin>
+    </gazebo>
+
+
+</robot>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find ar601_description)/urdf/sensors/ft_legs.gazebo.xacro"/>
+    <xacro:include filename="$(find ar601_description)/urdf/sensors/imu.gazebo.xacro"/>
+    <xacro:include filename="$(find ar601_description)/urdf/sensors/qbmove.gazebo.xacro"/>
+</robot>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot name="ar601">
+
+
+    <gazebo>
+        <plugin name="qbmove_1" filename="libqbmove_plugin.so">
+	<joint>LKneePitch</joint>
+	<command_topic>/motor1_motor2/command_l</command_topic>
+	<pos_topic>/pos_current/echo_l</pos_topic>
+        </plugin> 
+    </gazebo>
+
+    <gazebo>
+        <plugin name="qbmove_2" filename="libqbmove_plugin.so">
+        <joint>RKneePitch</joint>
+        <command_topic>/motor1_motor2/command_r</command_topic>
+        <pos_topic>/pos_current/echo_r</pos_topic>
+        </plugin>
+    </gazebo>
+
+</robot>

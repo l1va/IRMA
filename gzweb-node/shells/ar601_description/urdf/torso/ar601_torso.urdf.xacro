@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_torso_macro"> 
+
+  <link_macro name="Belly"/>
+  <link_macro name="Torso"/>
+
+  <joint
+    name="TorsoYaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Belly" />
+    <child
+      link="Torso" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+
+  <joint_transmission_macro joint_name="TorsoYaw"/>
+
+  </xacro:macro>
+</robot>

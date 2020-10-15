@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<robot name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ar601_description)/urdf/head/ar601_head_primitive_inertia.urdf.xacro" /> 
+  <xacro:include filename="$(find ar601_description)/urdf/leg/ar601_leg_primitive_inertia.urdf.xacro" />  
+  <xacro:include filename="$(find ar601_description)/urdf/arm/ar601_arm_primitive_inertia.urdf.xacro" />
+  <xacro:include filename="$(find ar601_description)/urdf/arm/ar601_wrist_primitive_inertia.urdf.xacro" />
+  <xacro:include filename="$(find ar601_description)/urdf/torso/ar601_torso_primitive_inertia.urdf.xacro" /> 
+
+</robot>
+

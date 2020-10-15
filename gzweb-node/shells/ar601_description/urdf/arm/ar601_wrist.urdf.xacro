@@ -1,0 +1,755 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_wrist_macro">
+
+    <link_macro name="LWrist1"/>
+    <link_macro name="LWrist2"/>
+    <link_macro name="LFinger1_1"/>
+    <link_macro name="LFinger1_2"/>
+    <link_macro name="LFinger2_1"/>
+    <link_macro name="LFinger2_2"/>
+    <link_macro name="LFinger2_3"/>
+    <link_macro name="LFinger3_1"/>
+    <link_macro name="LFinger3_2"/>
+    <link_macro name="LFinger3_3"/>
+    <link_macro name="LFinger4_1"/>
+    <link_macro name="LFinger4_2"/>
+    <link_macro name="LFinger4_3"/>
+    <link_macro name="LFinger5_1"/>
+    <link_macro name="LFinger5_2"/>
+    <link_macro name="RWrist1"/>
+    <link_macro name="RWrist2"/>
+    <link_macro name="RFinger1_1"/>
+    <link_macro name="RFinger1_2"/>
+    <link_macro name="RFinger2_1"/>
+    <link_macro name="RFinger2_2"/>
+    <link_macro name="RFinger2_3"/>
+    <link_macro name="RFinger3_1"/>
+    <link_macro name="RFinger3_2"/>
+    <link_macro name="RFinger3_3"/>
+    <link_macro name="RFinger4_1"/>
+    <link_macro name="RFinger4_2"/>
+    <link_macro name="RFinger4_3"/>
+    <link_macro name="RFinger5_1"/>
+    <link_macro name="RFinger5_2"/>
+
+  <joint
+    name="LWristRoll"
+    type="revolute">
+    <origin
+      xyz="0 0.124 0"
+      rpy="0 0 0" />
+    <parent
+      link="LArm" />
+    <child
+      link="LWrist1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.0157079"
+      upper="0.043633"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="15"
+      friction="0.1" />
+  </joint>
+
+  <joint
+    name="LWristYaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LWrist1" />
+    <child
+      link="LWrist2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0209439"
+      upper="0.0157079"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="15"
+      friction="0.1" />
+  </joint>
+
+  <joint
+    name="LThumb"
+    type="revolute">
+    <origin
+      xyz="0.041417 0.09694 0.016252"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger1_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.008726"
+      upper="0.2967"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+  <joint
+    name="LThumb_dep1"
+    type="revolute">
+    <origin
+      xyz="0.029811 0.021916 0"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger1_1" />
+    <child
+      link="LFinger1_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="101" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+  <joint
+    name="LIndex"
+    type="revolute">
+    <origin
+      xyz="-0.01266 0.1214 0.026148"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger2_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.2967"
+      upper="0.01745"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LIndex_dep1"
+    type="revolute">
+    <origin
+      xyz="0.009714 0.035696 0.00064555"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger2_1" />
+    <child
+      link="LFinger2_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LIndex_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0086684 0.025566 0.00047089"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger2_2" />
+    <child
+      link="LFinger2_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LMiddle"
+    type="revolute">
+    <origin
+      xyz="-0.011952 0.12813 0.007"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger3_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.2967"
+      upper="0"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+  <joint
+    name="LMiddle_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0086678 0.03597 0"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger3_1" />
+    <child
+      link="LFinger3_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LMiddle_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0080376 0.025776 0"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger3_2" />
+    <child
+      link="LFinger3_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LRing"
+    type="revolute">
+    <origin
+      xyz="-0.01272 0.12083 -0.01288"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger4_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.2967"
+      upper="0.01745"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LRing_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0096823 0.035658 -0.0019358"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger4_1" />
+    <child
+      link="LFinger4_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LRing_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0075359 0.025888 -0.001413"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger4_2" />
+    <child
+      link="LFinger4_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LPinky"
+    type="revolute">
+    <origin
+      xyz="-0.013026 0.11792 -0.033543"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger5_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.2967"
+      upper="0.01745"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="LPinky_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0097608 0.035479 -0.0038667"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger5_1" />
+    <child
+      link="LFinger5_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+<!--   RIGHT -->
+
+  <joint
+    name="RWristRoll"
+    type="revolute">
+    <origin
+      xyz="0 -0.124 0"
+      rpy="0 0 0" />
+    <parent
+      link="RArm" />
+    <child
+      link="RWrist1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.01745329"
+      upper="0.043633"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="15"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RWristYaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RWrist1" />
+    <child
+      link="RWrist2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0244346"
+      upper="0.029670"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="15"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RThumb"
+    type="revolute">
+    <origin
+      xyz="0.041417 -0.09694 0.016252"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger1_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.2967"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RThumb_dep1"
+    type="revolute">
+    <origin
+      xyz="0.030972 -0.020242 0"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger1_1" />
+    <child
+      link="RFinger1_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RIndex"
+    type="revolute">
+    <origin
+      xyz="-0.01266 -0.1214 0.026148"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger2_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.01745"
+      upper="0.2967"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RIndex_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0082897 -0.036054 0.00064443"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger2_1" />
+    <child
+      link="RFinger2_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RIndex_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0059574 -0.02633 0.00047015"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger2_2" />
+    <child
+      link="RFinger2_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RMiddle"
+    type="revolute">
+    <origin
+      xyz="-0.011952 -0.12813 0.007"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger3_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.01745"
+      upper="0.2967"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RMiddle_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0081334 -0.036095 0"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger3_1" />
+    <child
+      link="RFinger3_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RMiddle_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0059341 -0.02634 0"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger3_2" />
+    <child
+      link="RFinger3_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RRing"
+    type="revolute">
+    <origin
+      xyz="-0.01272 -0.12083 -0.01288"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger4_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.01745"
+      upper="0.2967"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RRing_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0092832 -0.035764 -0.0019352"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger4_1" />
+    <child
+      link="RFinger4_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RRing_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0057233 -0.026349 -0.001409"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger4_2" />
+    <child
+      link="RFinger4_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RPinky"
+    type="revolute">
+    <origin
+      xyz="-0.013026 -0.11792 -0.033543"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger5_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.01745"
+      upper="0.2967"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+
+  <joint
+    name="RPinky_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0098654 -0.03545 -0.0038669"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger5_1" />
+    <child
+      link="RFinger5_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="10"
+      velocity="2" />
+    <dynamics
+      damping="1"
+      friction="0.1" />
+  </joint>
+
+  <joint_transmission_macro joint_name="LWristRoll"/>
+  <joint_transmission_macro joint_name="LWristYaw"/>
+  <joint_transmission_macro joint_name="LThumb"/>
+  <joint_transmission_macro joint_name="LThumb_dep1"/>
+  <joint_transmission_macro joint_name="LIndex"/>
+  <joint_transmission_macro joint_name="LIndex_dep1"/>
+  <joint_transmission_macro joint_name="LIndex_dep2"/>
+  <joint_transmission_macro joint_name="LMiddle"/>
+  <joint_transmission_macro joint_name="LMiddle_dep1"/>
+  <joint_transmission_macro joint_name="LMiddle_dep2"/>
+  <joint_transmission_macro joint_name="LRing"/>
+  <joint_transmission_macro joint_name="LRing_dep1"/>
+  <joint_transmission_macro joint_name="LRing_dep2"/>
+  <joint_transmission_macro joint_name="LPinky"/>
+  <joint_transmission_macro joint_name="LPinky_dep1"/>
+  <joint_transmission_macro joint_name="RWristRoll"/>
+  <joint_transmission_macro joint_name="RWristYaw"/>
+  <joint_transmission_macro joint_name="RThumb"/>
+  <joint_transmission_macro joint_name="RThumb_dep1"/>
+  <joint_transmission_macro joint_name="RIndex"/>
+  <joint_transmission_macro joint_name="RIndex_dep1"/>
+  <joint_transmission_macro joint_name="RIndex_dep2"/>
+  <joint_transmission_macro joint_name="RMiddle"/>
+  <joint_transmission_macro joint_name="RMiddle_dep1"/>
+  <joint_transmission_macro joint_name="RMiddle_dep2"/>
+  <joint_transmission_macro joint_name="RRing"/>
+  <joint_transmission_macro joint_name="RRing_dep1"/>
+  <joint_transmission_macro joint_name="RRing_dep2"/>
+  <joint_transmission_macro joint_name="RPinky"/>
+  <joint_transmission_macro joint_name="RPinky_dep1"/>
+
+  </xacro:macro>
+</robot>

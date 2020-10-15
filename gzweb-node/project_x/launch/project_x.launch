@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="project_x" name="project_x" type="main.py" output="log" />
+</launch>

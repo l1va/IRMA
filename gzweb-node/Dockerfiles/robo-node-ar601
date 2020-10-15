@@ -1,0 +1,17 @@
+FROM ros-melodic-gz-base:1.1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        python-catkin-tools \
+                python-scipy \
+                python-matplotlib \
+                python-tk \
+        && rm -rf /var/lib/apt/lists/*
+
+# configure environment
+RUN mkdir -p /home/catkin_ws/src/ar_601
+
+COPY AR_601 /home/catkin_ws/src/ar_601
+
+RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /home/catkin_ws; catkin_make'
+
+EXPOSE 11345-11355

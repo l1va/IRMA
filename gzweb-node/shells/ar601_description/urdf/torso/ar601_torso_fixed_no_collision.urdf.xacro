@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_torso_macro"> 
+
+  <link_macro_2 name="Belly"/>
+  <link_macro_2 name="Torso"/>
+
+  <joint
+    name="TorsoYaw"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Belly" />
+    <child
+      link="Torso" />
+  </joint>
+
+  </xacro:macro>
+</robot>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find ar601_description)/urdf/common.xacro"/>
+    <xacro:include filename="$(find ar601_description)/urdf/helper_macros.urdf.xacro"/>
+
+    <xacro:include filename="$(find ar601_description)/urdf/ar601_primitive_collision_geoms.urdf.xacro"/>
+
+    <xacro:include filename="$(find ar601_description)/urdf/ar601_original_inertia.urdf.xacro"/>
+    <!-- NOT FIXED: -->
+    <xacro:include filename="$(find ar601_description)/urdf/arm/ar601_arm.urdf.xacro"/>
+    <xacro:include filename="$(find ar601_description)/urdf/arm/ar601_wrist.urdf.xacro"/>
+    <!-- FIXED: -->
+    <xacro:include filename="$(find ar601_description)/urdf/leg/ar601_leg_fixed.urdf.xacro"/>
+    <xacro:include filename="$(find ar601_description)/urdf/torso/ar601_torso_fixed_no_collision.urdf.xacro"/>
+    <xacro:include filename="$(find ar601_description)/urdf/head/ar601_head_fixed_no_collision.urdf.xacro"/>
+
+    <ar601_torso_macro/>
+    <ar601_arm_macro/>
+    <ar601_wrist_macro/>
+    <ar601_head_macro/>
+    <ar601_leg_macro/>
+
+    <xacro:include filename="$(find ar601_description)/gazebo/gazebo.urdf.xacro"/>
+
+
+</robot>

@@ -1,0 +1,10 @@
+FROM ros:melodic-ros-base-bionic
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+                ros-melodic-ros-control \
+                ros-melodic-ros-controllers \
+                ros-melodic-gazebo-ros \
+		ros-melodic-gazebo-ros-pkgs \
+                ros-melodic-gazebo-ros-control \
+                libeigen3-dev \
+	&& rm -rf /var/lib/apt/lists/*

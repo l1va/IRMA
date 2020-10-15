@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="Neck1_inertial_macro">
+  <inertial_constant_macro /> 
+</xacro:macro>  
+
+<xacro:macro name="Neck2_inertial_macro">
+  <inertial_constant_macro /> 
+</xacro:macro>  
+
+<xacro:macro name="Head1_inertial_macro">
+  <inertial_constant_macro /> 
+</xacro:macro>  
+
+<xacro:macro name="Head2_inertial_macro">
+  <inertial_constant_macro /> 
+</xacro:macro>  
+
+</robot>

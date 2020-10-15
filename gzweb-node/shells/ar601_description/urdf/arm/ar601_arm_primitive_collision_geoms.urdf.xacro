@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LShoulder1_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.0031158909 0.020443695 -0.019663084" />
+      <geometry>
+        <box size="0.001 0.001 0.001"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder1_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.013522619 -0.010264050 0.0013935747" />
+      <geometry>
+        <box size="0.016 0.033 0.02165" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder2_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.036239 0.000734 0.000660" />
+      <geometry>
+        <box size="0.06 0.032 0.035" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder2_collision_geom_macro">
+    <collision>
+      <origin xyz="0.016 0.016 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.032 0.032 0.035" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder3_collision_geom_macro">
+    <collision>
+      <origin xyz="0.016 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.064 0.032 0.032" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder3_collision_geom_macro">
+    <collision>
+      <geometry>
+        <box size="0.032 0.005 0.032" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LElbow_collision_geom_macro">
+    <collision>
+      <origin xyz="0.016 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.032 0.005 0.032" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RElbow_collision_geom_macro">    
+    <collision>
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LArm_collision_geom_macro">    
+    <collision>
+      <origin xyz="-0.013523 0.010264 0.001394" />
+      <geometry>
+        <box size="0.016 0.033 0.02165" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RArm_collision_geom_macro"> 
+    <collision>
+      <origin xyz="-0.036239 0.000734 -0.000660" />
+      <geometry>
+        <box size="0.06 0.032 0.035"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+
+
+</robot>

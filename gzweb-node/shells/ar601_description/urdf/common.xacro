@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Joint dynamics -->
+
+  <xacro:property name="leg_joint_friction"   value="0.1" />
+  <xacro:property name="leg_joint_damping"  value="10.0" /> <!-- seems proper 10-20 -->
+  <xacro:property name="arm_joint_friction"   value="1" />
+  <xacro:property name="arm_joint_damping"  value="15" />
+  <xacro:property name="head_joint_friction"   value="100.0" />
+  <xacro:property name="head_joint_damping"  value="0.0" />
+  <xacro:property name="torso_joint_friction"   value="100.0" />
+  <xacro:property name="torso_joint_damping"  value="0.0" />
+  <xacro:property name="wrist_joint_friction"   value="100.0" />
+  <xacro:property name="wrist_joint_damping"  value="0.0" />
+
+ <!--  NOMINAL EFFORT VALUES -->
+<!--   <xacro:property name="hip_yaw_max_effort"  value="20.0" />
+  <xacro:property name="hip_max_effort"  value="60.0" />
+  <xacro:property name="knee_max_effort"  value="52.0" />
+  <xacro:property name="ankle_max_effort"  value="20.0" /> -->
+
+<!--   STALL EFFORT VALUES -->
+
+<!--   <xacro:property name="hip_yaw_max_effort"  value="200.0" />
+  <xacro:property name="hip_max_effort"  value="840.0" />
+  <xacro:property name="knee_max_effort"  value="728.0" />
+  <xacro:property name="ankle_max_effort"  value="200.0" /> -->
+
+  <!--   30% STALL EFFORT VALUES -->
+
+  <xacro:property name="hip_yaw_max_effort"  value="60.0" />
+  <xacro:property name="hip_max_effort"  value="250.0" />
+  <xacro:property name="knee_max_effort"  value="220.0" />
+  <xacro:property name="ankle_max_effort"  value="60.0" />
+
+    <!--   TEST STALL EFFORT VALUES -->
+
+<!--   <xacro:property name="hip_yaw_max_effort"  value="1000.0" />
+  <xacro:property name="hip_max_effort"  value="1000.0" />
+  <xacro:property name="knee_max_effort"  value="1000.0" />
+  <xacro:property name="ankle_max_effort"  value="1000.0" /> -->
+
+  <xacro:property name="ground_kp"  value="1000000.0" />
+  <xacro:property name="ground_kd"  value="10000.0" />
+  <xacro:property name="ground_mu1"  value="1.5" />
+  <xacro:property name="ground_mu2"  value="1.5" />
+
+</robot>

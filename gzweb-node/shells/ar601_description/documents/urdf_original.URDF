@@ -1,0 +1,3520 @@
+<robot
+  name="9.SLDASM">
+  <link
+    name="Taz">
+    <inertial>
+      <origin
+        xyz="0.0087165 3.8567E-07 -0.051657"
+        rpy="0 0 0" />
+      <mass
+        value="4.1266" />
+      <inertia
+        ixx="0.028323"
+        ixy="-8.9375E-07"
+        ixz="-0.00010747"
+        iyy="0.011957"
+        iyz="-1.5565E-07"
+        izz="0.033839" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Taz.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Taz.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="LPelvis">
+    <inertial>
+      <origin
+        xyz="-0.034371 -0.00022961 0.053994"
+        rpy="0 0 0" />
+      <mass
+        value="0.90762" />
+      <inertia
+        ixx="0.001513"
+        ixy="-0.00019809"
+        ixz="0.00027147"
+        iyy="0.0041395"
+        iyz="-1.3895E-05"
+        izz="0.0037007" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LPelvis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LPelvis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LHipYaw"
+    type="revolute">
+    <origin
+      xyz="0.0276 0.088 -0.207"
+      rpy="0 0 0" />
+    <parent
+      link="Taz" />
+    <child
+      link="LPelvis" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LHip">
+    <inertial>
+      <origin
+        xyz="-0.013602 -5.4379E-09 1.6368E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.75479" />
+      <inertia
+        ixx="0.00078577"
+        ixy="-5.484E-10"
+        ixz="7.7169E-12"
+        iyy="0.0012654"
+        iyz="-9.464E-11"
+        izz="0.0015602" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LHip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LHip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LHipRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LPelvis" />
+    <child
+      link="LHip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LThigh">
+    <inertial>
+      <origin
+        xyz="0.0078898 0.0060365 -0.17059"
+        rpy="0 0 0" />
+      <mass
+        value="4.0404" />
+      <inertia
+        ixx="0.040672"
+        ixy="-6.6889E-05"
+        ixz="0.00037892"
+        iyy="0.035176"
+        iyz="0.0008772"
+        izz="0.011745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LThigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LThigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LHipPitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LHip" />
+    <child
+      link="LThigh" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LTibia">
+    <inertial>
+      <origin
+        xyz="0.0024901 0.004112 -0.15309"
+        rpy="0 0 0" />
+      <mass
+        value="2.4413" />
+      <inertia
+        ixx="0.013861"
+        ixy="7.8857E-05"
+        ixz="0.00066279"
+        iyy="0.011379"
+        iyz="4.217E-07"
+        izz="0.0056608" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LTibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LTibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LKneePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="LThigh" />
+    <child
+      link="LTibia" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LAnkle">
+    <inertial>
+      <origin
+        xyz="-0.0076594 -0.00165 8.8112E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.29753" />
+      <inertia
+        ixx="0.00016111"
+        ixy="-8.599E-11"
+        ixz="1.3953E-12"
+        iyy="0.00028318"
+        iyz="-1.6763E-11"
+        izz="0.000346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LAnkle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LAnkle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LAnklePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="LTibia" />
+    <child
+      link="LAnkle" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFoot">
+    <inertial>
+      <origin
+        xyz="0.008236 -0.0039142 -0.072352"
+        rpy="0 0 0" />
+      <mass
+        value="2.2086" />
+      <inertia
+        ixx="0.0054139"
+        ixy="0.00021256"
+        ixz="-0.0010579"
+        iyy="0.012991"
+        iyz="-9.5507E-05"
+        izz="0.015227" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFoot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFoot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LAnkleRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LAnkle" />
+    <child
+      link="LFoot" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RPelvis">
+    <inertial>
+      <origin
+        xyz="-0.034365 0.00022679 0.053996"
+        rpy="0 0 0" />
+      <mass
+        value="0.90771" />
+      <inertia
+        ixx="0.0015131"
+        ixy="0.00019794"
+        ixz="0.00027162"
+        iyy="0.0041399"
+        iyz="1.3821E-05"
+        izz="0.003701" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RPelvis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RPelvis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RHipYaw"
+    type="revolute">
+    <origin
+      xyz="0.0276 -0.088 -0.207"
+      rpy="0 0 0" />
+    <parent
+      link="Taz" />
+    <child
+      link="RPelvis" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RHip">
+    <inertial>
+      <origin
+        xyz="-0.013602 -5.437E-09 1.9017E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.75479" />
+      <inertia
+        ixx="0.00078577"
+        ixy="-5.4835E-10"
+        ixz="1.0389E-11"
+        iyy="0.0012654"
+        iyz="-1.4369E-06"
+        izz="0.0015602" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RHip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RHip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RHipRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RPelvis" />
+    <child
+      link="RHip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RThigh">
+    <inertial>
+      <origin
+        xyz="0.0077227 -0.0068672 -0.17057"
+        rpy="0 0 0" />
+      <mass
+        value="4.0404" />
+      <inertia
+        ixx="0.040671"
+        ixy="6.808E-05"
+        ixz="0.00040692"
+        iyy="0.035184"
+        iyz="-0.00076299"
+        izz="0.011738" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RThigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RThigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RHipPitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RHip" />
+    <child
+      link="RThigh" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RTibia">
+    <inertial>
+      <origin
+        xyz="0.0026772 -0.006222 -0.15306"
+        rpy="0 0 0" />
+      <mass
+        value="2.4415" />
+      <inertia
+        ixx="0.013867"
+        ixy="-7.5789E-05"
+        ixz="0.0006378"
+        iyy="0.011382"
+        iyz="2.7139E-05"
+        izz="0.0056575" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RTibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RTibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RKneePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="RThigh" />
+    <child
+      link="RTibia" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RAnkle">
+    <inertial>
+      <origin
+        xyz="-0.0070943 -0.0010786 1.0683E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.29753" />
+      <inertia
+        ixx="0.00016111"
+        ixy="-8.5983E-11"
+        ixz="1.8142E-12"
+        iyy="0.00028319"
+        iyz="-3.0609E-07"
+        izz="0.000346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RAnkle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RAnkle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RAnklePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="RTibia" />
+    <child
+      link="RAnkle" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFoot">
+    <inertial>
+      <origin
+        xyz="0.0088011 0.0011856 -0.072352"
+        rpy="0 0 0" />
+      <mass
+        value="2.2085" />
+      <inertia
+        ixx="0.0054138"
+        ixy="-0.00021257"
+        ixz="-0.0010578"
+        iyy="0.012991"
+        iyz="9.5505E-05"
+        izz="0.015227" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFoot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFoot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RAnkleRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RAnkle" />
+    <child
+      link="RFoot" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="Torso">
+    <inertial>
+      <origin
+        xyz="-0.011272 2.1289E-05 0.16761"
+        rpy="0 0 0" />
+      <mass
+        value="17.759" />
+      <inertia
+        ixx="0.23995"
+        ixy="2.9043E-05"
+        ixz="-0.0089394"
+        iyy="0.21472"
+        iyz="2.725E-05"
+        izz="0.17329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TorsoYaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Taz" />
+    <child
+      link="Torso" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="Neck1">
+    <inertial>
+      <origin
+        xyz="-0.0222927487404251 4.47895651753766E-05 0.0310409976295018"
+        rpy="0 0 0" />
+      <mass
+        value="0.657320428434859" />
+      <inertia
+        ixx="0.00102025512184757"
+        ixy="8.8215427283097E-09"
+        ixz="-0.000299801674473731"
+        iyy="0.00120134781263084"
+        iyz="7.0408059909823E-10"
+        izz="0.000718372081172033" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Neck1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Neck1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Neck1Pitch"
+    type="revolute">
+    <origin
+      xyz="0.0415 0 0.271"
+      rpy="0 0 0" />
+    <parent
+      link="Torso" />
+    <child
+      link="Neck1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="Neck2">
+    <inertial>
+      <origin
+        xyz="-9.38630904016337E-06 4.42165265520866E-05 -0.0162910790688592"
+        rpy="0 0 0" />
+      <mass
+        value="0.0167205530633327" />
+      <inertia
+        ixx="6.21421984464677E-06"
+        ixy="2.53498597662559E-21"
+        ixz="6.07382644085573E-22"
+        iyy="1.28553666419653E-05"
+        iyz="2.58157171621037E-22"
+        izz="1.23400064727747E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Neck2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Neck2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Neck2Yaw"
+    type="revolute">
+    <origin
+      xyz="-0.033 0 0.129"
+      rpy="0 0 0" />
+    <parent
+      link="Neck1" />
+    <child
+      link="Neck2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="Head1">
+    <inertial>
+      <origin
+        xyz="-9.38941181994821E-06 4.42605420928731E-05 -2.87270207621759E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.140258674510404" />
+      <inertia
+        ixx="0.000255527506833601"
+        ixy="1.9135797092887E-17"
+        ixz="-2.67463391711265E-10"
+        iyy="2.64614495249746E-05"
+        iyz="1.23991920427338E-10"
+        izz="0.000265796055755356" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Head1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Head1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Head1Roll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Neck2" />
+    <child
+      link="Head1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="Head2">
+    <inertial>
+      <origin
+        xyz="0.0367567218407244 6.13069479271212E-05 0.0741939345619121"
+        rpy="0 0 0" />
+      <mass
+        value="5.51543814682702" />
+      <inertia
+        ixx="0.0328094469174202"
+        ixy="9.24189424050915E-07"
+        ixz="-0.0037700679389647"
+        iyy="0.0336400080305931"
+        iyz="-1.055451708777E-07"
+        izz="0.0379699861871773" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Head2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/Head2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Head2Pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Head1" />
+    <child
+      link="Head2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RShoulder1">
+    <inertial>
+      <origin
+        xyz="0.0119949555242503 -0.0447411869608325 0.0124494864503562"
+        rpy="0 0 0" />
+      <mass
+        value="0.702386181282745" />
+      <inertia
+        ixx="0.00106974111532826"
+        ixy="-4.21603468717136E-05"
+        ixz="-1.03125854224853E-05"
+        iyy="0.00208349580288403"
+        iyz="-1.38983012380039E-05"
+        izz="0.00181178156982158" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RShoulder1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RShoulder1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RShoulder1Pitch"
+    type="revolute">
+    <origin
+      xyz="0.0081623 -0.12299 0.255"
+      rpy="0 0 0.18497" />
+    <parent
+      link="Torso" />
+    <child
+      link="RShoulder1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RShoulder2">
+    <inertial>
+      <origin
+        xyz="0.0512392226930269 -0.0264142906322848 0.00120771182202012"
+        rpy="0 0 0" />
+      <mass
+        value="0.710524721499474" />
+      <inertia
+        ixx="0.00114546631945158"
+        ixy="1.88298954427073E-05"
+        ixz="-1.50894836583682E-06"
+        iyy="0.000678757117060237"
+        iyz="-1.74663088662221E-05"
+        izz="0.00118255499414833" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RShoulder2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RShoulder2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RShoulder2Roll"
+    type="fixed">
+    <origin
+      xyz="-0.05 -0.0699 0"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder1" />
+    <child
+      link="RShoulder2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RShoulder3">
+    <inertial>
+      <origin
+        xyz="-0.000285512379694923 -0.0754223955241937 0.000610317810293803"
+        rpy="0 0 0" />
+      <mass
+        value="0.923986049465604" />
+      <inertia
+        ixx="0.00281485701688073"
+        ixy="-2.01727821238317E-05"
+        ixz="1.60626232828031E-06"
+        iyy="0.0011174015837173"
+        iyz="-2.74275836340887E-05"
+        izz="0.0024862009088974" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RShoulder3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RShoulder3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RShoulder3Pitch"
+    type="revolute">
+    <origin
+      xyz="0.04975 -0.0847 0"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder2" />
+    <child
+      link="RShoulder3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RElbow">
+    <inertial>
+      <origin
+        xyz="-0.00648692940415502 -0.0268889649873131 -0.0306512428440622"
+        rpy="0 0 0" />
+      <mass
+        value="0.0670881837495098" />
+      <inertia
+        ixx="0.000109022839821225"
+        ixy="6.73954004368908E-06"
+        ixz="-1.67802137931819E-07"
+        iyy="8.74563299787509E-05"
+        iyz="-6.59809657822101E-07"
+        izz="0.000124724907558027" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RElbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RElbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RElbowYaw"
+    type="revolute">
+    <origin
+      xyz="0.01 -0.1485 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder3" />
+    <child
+      link="RElbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RArm">
+    <inertial>
+      <origin
+        xyz="3.3908891167167E-07 -0.0546541724381555 0.000345780744001434"
+        rpy="0 0 0" />
+      <mass
+        value="0.69882147680058" />
+      <inertia
+        ixx="0.00106001711630364"
+        ixy="-6.29306886375941E-09"
+        ixz="2.13066980114719E-09"
+        iyy="0.000705561415630704"
+        iyz="3.04202034019262E-06"
+        izz="0.00107112324627601" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RArm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RArm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RArmPitch"
+    type="revolute">
+    <origin
+      xyz="-0.01 -0.083 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="RElbow" />
+    <child
+      link="RArm" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RWrist1">
+    <inertial>
+      <origin
+        xyz="-8.69257804625434E-09 -1.11022302462516E-16 -8.69257799074319E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00354841244692995" />
+      <inertia
+        ixx="2.55224026399827E-07"
+        ixy="-2.77348371382193E-13"
+        ixz="-2.68188677386964E-19"
+        iyy="4.81502399048945E-07"
+        iyz="2.77348371673297E-13"
+        izz="2.55224026399827E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RWrist1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RWrist1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RWristRoll"
+    type="revolute">
+    <origin
+      xyz="0 -0.124 0"
+      rpy="0 0 0" />
+    <parent
+      link="RArm" />
+    <child
+      link="RWrist1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RWrist2">
+    <inertial>
+      <origin
+        xyz="-0.0032015407111433 -0.0680002451287101 -0.00139605167258255"
+        rpy="0 0 0" />
+      <mass
+        value="0.106500992906003" />
+      <inertia
+        ixx="0.000160137434624347"
+        ixy="1.50250606985986E-05"
+        ixz="8.08883042716908E-06"
+        iyy="7.18756092477474E-05"
+        iyz="5.84436693809921E-06"
+        izz="0.000161241258582528" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RWrist2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RWrist2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RWristYaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RWrist1" />
+    <child
+      link="RWrist2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger1_1">
+    <inertial>
+      <origin
+        xyz="0.018058 -0.011601 -0.004"
+        rpy="0 0 0" />
+      <mass
+        value="0.0079497" />
+      <inertia
+        ixx="5.7022E-07"
+        ixy="-4.0231E-07"
+        ixz="-1.3614E-12"
+        iyy="8.6444E-07"
+        iyz="-1.7421E-12"
+        izz="1.167E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger1_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger1_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RThumb"
+    type="revolute">
+    <origin
+      xyz="0.041417 -0.09694 0.016252"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger1_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger1_2">
+    <inertial>
+      <origin
+        xyz="0.0104605997712183 -0.00704052558917401 -0.00400000848701126"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771897410452" />
+      <inertia
+        ixx="2.09142237590012E-07"
+        ixy="-5.854955435559E-08"
+        ixz="5.71441363710635E-13"
+        iyy="2.19204240697583E-07"
+        iyz="1.16816567655116E-12"
+        izz="2.61121384273268E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger1_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger1_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RThumb_dep1"
+    type="revolute">
+    <origin
+      xyz="0.030972 -0.020242 0"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger1_1" />
+    <child
+      link="RFinger1_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger2_1">
+    <inertial>
+      <origin
+        xyz="0.00466411344108193 -0.0210181956784309 -0.00362576268809778"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969377283116" />
+      <inertia
+        ixx="1.09026286614019E-06"
+        ixy="-2.10716832723496E-07"
+        ixz="3.90517481232322E-09"
+        iyy="3.44669160887216E-07"
+        iyz="-1.48073538733885E-08"
+        izz="1.16674314947762E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger2_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger2_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RIndex"
+    type="revolute">
+    <origin
+      xyz="-0.01266 -0.1214 0.026148"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger2_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger2_2">
+    <inertial>
+      <origin
+        xyz="0.00340591071964673 -0.0161277265396876 -0.00371387542361651"
+        rpy="0 0 0" />
+      <mass
+        value="0.00554910460160714" />
+      <inertia
+        ixx="5.08721761194374E-07"
+        ixy="-8.9537250022065E-08"
+        ixz="1.67909101763604E-09"
+        iyy="2.25948765171186E-07"
+        iyz="-5.78794517498675E-09"
+        izz="5.4511708567559E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger2_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger2_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RIndex_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0082897 -0.036054 0.00064443"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger2_1" />
+    <child
+      link="RFinger2_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger2_3">
+    <inertial>
+      <origin
+        xyz="0.00245171343968303 -0.0124374976484516 -0.00378032558892799"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771964934734" />
+      <inertia
+        ixx="2.59555350116999E-07"
+        ixy="-3.73280002129942E-08"
+        ixz="6.33500791301763E-10"
+        iyy="1.6882316593225E-07"
+        iyz="-1.72994323554112E-09"
+        izz="2.61089184393434E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger2_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger2_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RIndex_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0059574 -0.02633 0.00047015"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger2_2" />
+    <child
+      link="RFinger2_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger3_1">
+    <inertial>
+      <origin
+        xyz="0.00455337847888747 -0.0209745421456283 -0.00399999638824711"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969055324976" />
+      <inertia
+        ixx="1.09207369431954E-06"
+        ixy="-2.07515143699226E-07"
+        ixz="-2.30737328475444E-12"
+        iyy="3.42591157593321E-07"
+        iyz="-7.93593980316647E-13"
+        izz="1.16701011250278E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger3_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger3_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RMiddle"
+    type="revolute">
+    <origin
+      xyz="-0.011952 -0.12813 0.007"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger3_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger3_2">
+    <inertial>
+      <origin
+        xyz="0.00337177939747289 -0.0160663472035111 -0.00400002877010486"
+        rpy="0 0 0" />
+      <mass
+        value="0.00554910281221021" />
+      <inertia
+        ixx="5.08879384138404E-07"
+        ixy="-8.93031634393639E-08"
+        ixz="-6.73364577063751E-13"
+        iyy="2.25685955064701E-07"
+        iyz="-7.82888712217815E-13"
+        izz="5.45222208070927E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger3_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger3_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RMiddle_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0081334 -0.036095 0"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger3_1" />
+    <child
+      link="RFinger3_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger3_3">
+    <inertial>
+      <origin
+        xyz="0.00339900717141772 -0.0121424842902205 -0.00399999184428201"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771964140524" />
+      <inertia
+        ixx="2.53127549336215E-07"
+        ixy="-4.39990053409608E-08"
+        ixz="1.2757899198276E-12"
+        iyy="1.75218879435412E-07"
+        iyz="1.86852859061945E-13"
+        izz="2.61121309452847E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger3_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger3_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RMiddle_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0059341 -0.02634 0"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger3_2" />
+    <child
+      link="RFinger3_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger4_1">
+    <inertial>
+      <origin
+        xyz="0.00516177212610174 -0.0205873675662279 -0.00511674333688239"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969556236767" />
+      <inertia
+        ixx="1.0780535958852E-06"
+        ixy="-2.30675313303411E-07"
+        ixz="-1.29192943192109E-08"
+        iyy="3.59016267886317E-07"
+        iyz="4.40332116419478E-08"
+        izz="1.16460546770067E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger4_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger4_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRing"
+    type="revolute">
+    <origin
+      xyz="-0.01272 -0.12083 -0.01288"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger4_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger4_2">
+    <inertial>
+      <origin
+        xyz="0.00318340316971605 -0.0158694092251892 -0.00485019942956061"
+        rpy="0 0 0" />
+      <mass
+        value="0.00554910342034866" />
+      <inertia
+        ixx="5.10293211654034E-07"
+        ixy="-8.68883253355482E-08"
+        ixz="-4.88757158314181E-09"
+        iyy="2.25217697925249E-07"
+        iyz="1.73719161707277E-08"
+        izz="5.44276592419134E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger4_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger4_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRing_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0092832 -0.035764 -0.0019352"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger4_1" />
+    <child
+      link="RFinger4_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger4_3">
+    <inertial>
+      <origin
+        xyz="0.0012480368049875 -0.0123238366819444 -0.00464311804847459"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771960423063" />
+      <inertia
+        ixx="2.6551390285043E-07"
+        ixy="-2.85539812473493E-08"
+        ixz="-1.36703267544564E-09"
+        iyy="1.63121667317206E-07"
+        iyz="5.34932309035164E-09"
+        izz="2.60832210977182E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger4_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger4_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRing_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0057233 -0.026349 -0.001409"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger4_2" />
+    <child
+      link="RFinger4_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger5_1">
+    <inertial>
+      <origin
+        xyz="0.00544061828037408 -0.020208057141314 -0.00622083122001763"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969692061838" />
+      <inertia
+        ixx="1.0703561672966E-06"
+        ixy="-2.4113315178878E-07"
+        ixz="-2.71919556991111E-08"
+        iyy="3.73900821619348E-07"
+        iyz="8.71245278633591E-08"
+        izz="1.15741847589617E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger5_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger5_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RPinky"
+    type="revolute">
+    <origin
+      xyz="-0.013026 -0.11792 -0.033543"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="RWrist2" />
+    <child
+      link="RFinger5_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="RFinger5_2">
+    <inertial>
+      <origin
+        xyz="0.00210372072020062 -0.0119417066357316 -0.00528801175808119"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771917446531" />
+      <inertia
+        ixx="2.60781054116718E-07"
+        ixy="-3.55952343806166E-08"
+        ixz="-3.59421562514109E-09"
+        iyy="1.68718444138267E-07"
+        iyz="1.0375961065489E-08"
+        izz="2.59968376244567E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger5_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/RFinger5_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RPinky_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0098654 -0.03545 -0.0038669"
+      rpy="0 0 0" />
+    <parent
+      link="RFinger5_1" />
+    <child
+      link="RFinger5_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LShoulder1">
+    <inertial>
+      <origin
+        xyz="0.0119102663222135 0.044680169164134 0.0125101838399666"
+        rpy="0 0 0" />
+      <mass
+        value="0.703972240590069" />
+      <inertia
+        ixx="0.00106958029541502"
+        ixy="4.31046051165897E-05"
+        ixz="-1.25610545954009E-05"
+        iyy="0.00208834082537485"
+        iyz="1.35987436285722E-05"
+        izz="0.00181405089345679" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LShoulder1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LShoulder1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LShoulder1Pitch"
+    type="revolute">
+    <origin
+      xyz="0.0081623 0.12308 0.255"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="Torso" />
+    <child
+      link="LShoulder1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LShoulder2">
+    <inertial>
+      <origin
+        xyz="0.0512392400737466 0.0264143370365393 0.0012076909283113"
+        rpy="0 0 0" />
+      <mass
+        value="0.710520459771819" />
+      <inertia
+        ixx="0.00114546112171041"
+        ixy="-1.88293434343879E-05"
+        ixz="-1.50917387927519E-06"
+        iyy="0.000678754020646653"
+        iyz="1.74648361634084E-05"
+        izz="0.0011825421207912" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LShoulder2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LShoulder2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LShoulder2Roll"
+    type="revolute">
+    <origin
+      xyz="-0.05 0.0709 0"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder1" />
+    <child
+      link="LShoulder2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LShoulder3">
+    <inertial>
+      <origin
+        xyz="-0.000285011372341666 0.0754226804882471 0.000610240061953593"
+        rpy="0 0 0" />
+      <mass
+        value="0.924000387078446" />
+      <inertia
+        ixx="0.00281486815062724"
+        ixy="2.01811427412035E-05"
+        ixz="1.60698461086991E-06"
+        iyy="0.001117411560517"
+        iyz="2.74171545891918E-05"
+        izz="0.00248622929669194" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LShoulder3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LShoulder3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LShoulder3Pitch"
+    type="revolute">
+    <origin
+      xyz="0.04975 0.0847 0"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder2" />
+    <child
+      link="LShoulder3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LElbow">
+    <inertial>
+      <origin
+        xyz="-0.00649287860201503 0.0268919766798237 -0.0306567508285921"
+        rpy="0 0 0" />
+      <mass
+        value="0.0670906547261469" />
+      <inertia
+        ixx="0.0001090358344894"
+        ixy="-6.74241047758024E-06"
+        ixz="-1.64115699849976E-07"
+        iyy="8.7461529022883E-05"
+        iyz="6.51839288561937E-07"
+        izz="0.000124731354151367" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LElbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LElbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LElbowYaw"
+    type="revolute">
+    <origin
+      xyz="0.01 0.1485 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder3" />
+    <child
+      link="LElbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LArm">
+    <inertial>
+      <origin
+        xyz="4.78492893404847E-07 0.0546540523030666 0.000345579805242358"
+        rpy="0 0 0" />
+      <mass
+        value="0.698818860634211" />
+      <inertia
+        ixx="0.00106001756026175"
+        ixy="1.21255797364553E-08"
+        ixz="9.70520459720007E-10"
+        iyy="0.000705558851650975"
+        iyz="-3.04830728342831E-06"
+        izz="0.00107111332490694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LArm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LArm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LArmPitch"
+    type="revolute">
+    <origin
+      xyz="-0.01 0.083 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="LElbow" />
+    <child
+      link="LArm" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LWrist1">
+    <inertial>
+      <origin
+        xyz="8.69257801849876E-09 0 -8.69257799074319E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00354841244692992" />
+      <inertia
+        ixx="2.55224026399827E-07"
+        ixy="-2.77348371541011E-13"
+        ixz="2.68656438001341E-19"
+        iyy="4.81502399048942E-07"
+        iyz="-2.77348371751792E-13"
+        izz="2.55224026399825E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LWrist1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LWrist1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LWristRoll"
+    type="revolute">
+    <origin
+      xyz="0 0.124 0"
+      rpy="0 0 0" />
+    <parent
+      link="LArm" />
+    <child
+      link="LWrist1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LWrist2">
+    <inertial>
+      <origin
+        xyz="-0.00320146376134629 0.0679998358897447 -0.00139578498789278"
+        rpy="0 0 0" />
+      <mass
+        value="0.106503207491186" />
+      <inertia
+        ixx="0.000160140258431206"
+        ixy="-1.50255959162748E-05"
+        ixz="8.08904875658516E-06"
+        iyy="7.18787865803972E-05"
+        iyz="-5.84466814549343E-06"
+        izz="0.000161242457643774" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LWrist2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LWrist2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LWristYaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LWrist1" />
+    <child
+      link="LWrist2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger1_1">
+    <inertial>
+      <origin
+        xyz="0.017392149570403 0.0125768799508672 -0.00399999938736578"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794971429092078" />
+      <inertia
+        ixx="6.15322908627996E-07"
+        ixy="4.16037518101089E-07"
+        ixz="1.43642317278389E-12"
+        iyy="8.19342049389076E-07"
+        iyz="-1.65114666545725E-12"
+        izz="1.16701160817821E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger1_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger1_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LThumb"
+    type="revolute">
+    <origin
+      xyz="0.041417 0.09694 0.016252"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger1_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger1_2">
+    <inertial>
+      <origin
+        xyz="0.0105994545023848 0.00682969355090124 -0.00399999152754377"
+        rpy="0 0 0" />
+      <mass
+        value="0.0041977190113557" />
+      <inertia
+        ixx="2.06802404520768E-07"
+        ixy="5.8301215165313E-08"
+        ixz="-5.4821912482543E-13"
+        iyy="2.21544071243177E-07"
+        iyz="1.17854203341419E-12"
+        izz="2.61121380624231E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger1_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger1_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LThumb_dep1"
+    type="revolute">
+    <origin
+      xyz="0.029811 0.021916 0"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger1_1" />
+    <child
+      link="LFinger1_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="101" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger2_1">
+    <inertial>
+      <origin
+        xyz="0.00549196215025359 0.0208173591048728 -0.00362500054881426"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969630364376" />
+      <inertia
+        ixx="1.07237570353924E-06"
+        ixy="2.39620836473432E-07"
+        ixz="4.48235198945828E-09"
+        iyy="3.62556603064786E-07"
+        iyz="1.46506147637507E-08"
+        izz="1.16674304524627E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger2_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger2_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LIndex"
+    type="revolute">
+    <origin
+      xyz="-0.01266 0.1214 0.026148"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger2_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger2_2">
+    <inertial>
+      <origin
+        xyz="0.00506087231326857 0.0156875104338542 -0.00371293073598111"
+        rpy="0 0 0" />
+      <mass
+        value="0.00554910902171019" />
+      <inertia
+        ixx="4.87095066933935E-07"
+        ixy="1.16895916785917E-07"
+        ixz="2.24589234355965E-09"
+        iyy="2.47574406917102E-07"
+        iyz="5.56102513053388E-09"
+        izz="5.45118280139522E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger2_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger2_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LIndex_dep1"
+    type="revolute">
+    <origin
+      xyz="0.009714 0.035696 0.00064555"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger2_1" />
+    <child
+      link="LFinger2_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger2_3">
+    <inertial>
+      <origin
+        xyz="0.00268001122286671 0.0123904174102188 -0.00377999084881703"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771959929121" />
+      <inertia
+        ixx="2.58144318341166E-07"
+        ixy="3.89797182186474E-08"
+        ixz="6.65593494843648E-10"
+        iyy="1.7023412529365E-07"
+        iyz="1.71478367860653E-09"
+        izz="2.61089320284028E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger2_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger2_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LIndex_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0086684 0.025566 0.00047089"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger2_2" />
+    <child
+      link="LFinger2_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger3_1">
+    <inertial>
+      <origin
+        xyz="0.00486393266793878 0.0209047085521565 -0.00400000345690754"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969171707417" />
+      <inertia
+        ixx="1.0857545480312E-06"
+        ixy="2.18537580868424E-07"
+        ixz="2.28477451080569E-12"
+        iyy="3.48910305135014E-07"
+        iyz="-8.20369684876628E-13"
+        izz="1.16701018610524E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger3_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger3_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LMiddle"
+    type="revolute">
+    <origin
+      xyz="-0.011952 0.12813 0.007"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger3_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger3_2">
+    <inertial>
+      <origin
+        xyz="0.00465559688611381 0.0157423591331163 -0.00399997065634744"
+        rpy="0 0 0" />
+      <mass
+        value="0.00554910682396278" />
+      <inertia
+        ixx="4.92692912454704E-07"
+        ixy="1.10891475049074E-07"
+        ixz="5.96030604291027E-13"
+        iyy="2.41872402469041E-07"
+        iyz="-8.04820437065012E-13"
+        izz="5.45222393521601E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger3_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger3_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LMiddle_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0086678 0.03597 0"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger3_1" />
+    <child
+      link="LFinger3_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger3_3">
+    <inertial>
+      <origin
+        xyz="0.00345549223233155 0.0121265307317509 -0.00400000816255019"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771963133254" />
+      <inertia
+        ixx="2.52716242601003E-07"
+        ixy="4.43597548670222E-08"
+        ixz="-1.27509938559574E-12"
+        iyy="1.75630187004288E-07"
+        iyz="1.92568152089994E-13"
+        izz="2.61121310803093E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger3_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger3_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LMiddle_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0080376 0.025776 0"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger3_2" />
+    <child
+      link="LFinger3_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger4_1">
+    <inertial>
+      <origin
+        xyz="0.00539379528552368 0.0205276813540367 -0.00511722517128993"
+        rpy="0 0 0" />
+      <mass
+        value="0.0079496968084077" />
+      <inertia
+        ixx="1.07280674359839E-06"
+        ixy="2.3865494604774E-07"
+        ixz="-1.33941500839261E-08"
+        iyy="3.64263032045508E-07"
+        iyz="-4.38908645445117E-08"
+        izz="1.16460560772909E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger4_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger4_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LRing"
+    type="revolute">
+    <origin
+      xyz="-0.01272 0.12083 -0.01288"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger4_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger4_2">
+    <inertial>
+      <origin
+        xyz="0.00428947689637232 0.0156057848703034 -0.00485346295788791"
+        rpy="0 0 0" />
+      <mass
+        value="0.00554910711454078" />
+      <inertia
+        ixx="4.96905090660544E-07"
+        ixy="1.05768853662525E-07"
+        ixz="-6.0348314504347E-09"
+        iyy="2.38603567768899E-07"
+        iyz="-1.69838650780456E-08"
+        izz="5.44279020861715E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger4_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger4_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LRing_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0096823 0.035658 -0.0019358"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger4_1" />
+    <child
+      link="LFinger4_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger4_3">
+    <inertial>
+      <origin
+        xyz="0.00365609696954247 0.0118305938140987 -0.00465439914376264"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771176684675" />
+      <inertia
+        ixx="2.50768591324216E-07"
+        ixy="4.5910194564932E-08"
+        ixz="-2.46215576392311E-09"
+        iyy="1.77858501333368E-07"
+        iyz="-4.86905701344431E-09"
+        izz="2.60839634582203E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger4_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger4_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LRing_dep2"
+    type="revolute">
+    <origin
+      xyz="0.0075359 0.025888 -0.001413"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger4_2" />
+    <child
+      link="LFinger4_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger5_1">
+    <inertial>
+      <origin
+        xyz="0.00537981182902078 0.0202243856059368 -0.00622065626364918"
+        rpy="0 0 0" />
+      <mass
+        value="0.00794969723008604" />
+      <inertia
+        ixx="1.07177260958229E-06"
+        ixy="2.39074331726865E-07"
+        ixz="-2.69376127935973E-08"
+        iyy="3.72484968827753E-07"
+        iyz="-8.72070888937532E-08"
+        izz="1.15741784875636E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger5_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger5_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LPinky"
+    type="revolute">
+    <origin
+      xyz="-0.013026 0.11792 -0.033543"
+      rpy="0 0 0.18497" />
+    <parent
+      link="LWrist2" />
+    <child
+      link="LFinger5_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="LFinger5_2">
+    <inertial>
+      <origin
+        xyz="0.00230556354296731 0.0119034186562637 -0.00529021852627207"
+        rpy="0 0 0" />
+      <mass
+        value="0.00419771225237906" />
+      <inertia
+        ixx="2.59590700033085E-07"
+        ixy="3.70827265569868E-08"
+        ixz="-3.78245051695485E-09"
+        iyy="1.69906112085547E-07"
+        iyz="-1.03009788225527E-08"
+        izz="2.59969821852933E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger5_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://9.SLDASM/meshes/LFinger5_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LPinky_dep1"
+    type="revolute">
+    <origin
+      xyz="0.0097608 0.035479 -0.0038667"
+      rpy="0 0 0" />
+    <parent
+      link="LFinger5_1" />
+    <child
+      link="LFinger5_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+</robot>

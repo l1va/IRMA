@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_leg_macro"> 
+
+  <link_macro_2 name="LPelvis"/>
+  <link_macro_2 name="RPelvis"/>
+  <link_macro_2 name="LHip"/>
+  <link_macro_2 name="RHip"/>
+  <link_macro_2 name="LThigh"/>
+  <link_macro_2 name="RThigh"/>
+  <link_macro_2 name="LTibia"/>
+  <link_macro_2 name="RTibia"/>
+  <link_macro_2 name="LAnkle"/>
+  <link_macro_2 name="RAnkle"/>
+  <link_macro name="LFoot"/>
+  <link_macro name="RFoot"/>
+
+  <joint
+    name="LHipYaw"
+    type="revolute">
+    <origin
+      xyz="0.0276 0.088 -0.207"
+      rpy="0 0 0" />
+    <parent
+      link="Belly" />
+    <child
+      link="LPelvis" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.175"
+      upper="0.175"
+      effort="${hip_yaw_max_effort}"
+      velocity="2.5" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <joint
+    name="LHipRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LPelvis" />
+    <child
+      link="LHip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.192"
+      upper="0.314"
+      effort="${hip_max_effort}"
+      velocity="2.5" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <joint
+    name="LHipPitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LHip" />
+    <child
+      link="LThigh" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.047"
+      upper="0.698"
+      effort="${hip_max_effort}"
+      velocity="2.5" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <joint
+    name="LKneePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="LThigh" />
+    <child
+      link="LTibia" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.087"
+      upper="1.571"
+      effort="${knee_max_effort}"
+      velocity="5.8" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="LAnklePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="LTibia" />
+    <child
+      link="LAnkle" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.047"
+      upper="0.559"
+      effort="${ankle_max_effort}"
+      velocity="3.4" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="LAnkleRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LAnkle" />
+    <child
+      link="LFoot" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.297"
+      upper="0.297"
+      effort="${ankle_max_effort}"
+      velocity="3.4" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <!-- RIGHT -->
+
+
+  <joint
+    name="RHipYaw"
+    type="revolute">
+    <origin
+      xyz="0.0276 -0.088 -0.207"
+      rpy="0 0 0" />
+    <parent
+      link="Belly" />
+    <child
+      link="RPelvis" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.175"
+      upper="0.175"
+      effort="${hip_yaw_max_effort}"
+      velocity="2.5" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <joint
+    name="RHipRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RPelvis" />
+    <child
+      link="RHip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.314"
+      upper="0.192"
+      effort="${hip_max_effort}"
+      velocity="2.5" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <joint
+    name="RHipPitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RHip" />
+    <child
+      link="RThigh" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.047"
+      upper="0.698"
+      effort="${hip_max_effort}"
+      velocity="2.5" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="RKneePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="RThigh" />
+    <child
+      link="RTibia" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.087"
+      upper="1.571"
+      effort="${knee_max_effort}"
+      velocity="5.8" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+
+  <joint
+    name="RAnklePitch"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="RTibia" />
+    <child
+      link="RAnkle" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.047"
+      upper="0.559"
+      effort="${ankle_max_effort}"
+      velocity="3.4" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="RAnkleRoll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RAnkle" />
+    <child
+      link="RFoot" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.297"
+      upper="0.297"
+      effort="${ankle_max_effort}"
+      velocity="3.4" />
+    <dynamics
+      damping="${leg_joint_damping}"
+      friction="${leg_joint_friction}" />
+  </joint>
+
+  <joint_transmission_macro joint_name="LHipYaw"/>
+  <joint_transmission_macro joint_name="LHipRoll"/>
+  <joint_transmission_macro joint_name="LHipPitch"/>
+  <joint_transmission_macro joint_name="LKneePitch"/>
+  <joint_transmission_macro joint_name="LAnklePitch"/>
+  <joint_transmission_macro joint_name="LAnkleRoll"/>
+  <joint_transmission_macro joint_name="RHipYaw"/>
+  <joint_transmission_macro joint_name="RHipRoll"/>
+  <joint_transmission_macro joint_name="RHipPitch"/>
+  <joint_transmission_macro joint_name="RKneePitch"/>
+  <joint_transmission_macro joint_name="RAnklePitch"/>
+  <joint_transmission_macro joint_name="RAnkleRoll"/>
+
+  <gazebo reference="LFoot">
+    <kp>${ground_kp}</kp>
+    <kd>${ground_kd}</kd>
+    <mu1>${ground_mu1}</mu1>
+    <mu2>${ground_mu2}</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.00</minDepth>
+    <maxContacts>4</maxContacts>
+  </gazebo>
+
+  <gazebo reference="RFoot">
+    <kp>${ground_kp}</kp>
+    <kd>${ground_kd}</kd>
+    <mu1>${ground_mu1}</mu1>
+    <mu2>${ground_mu2}</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.00</minDepth>
+    <maxContacts>4</maxContacts>
+  </gazebo>
+
+
+
+  </xacro:macro>
+</robot>

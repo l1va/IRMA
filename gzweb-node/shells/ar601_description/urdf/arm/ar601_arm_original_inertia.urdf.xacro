@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LShoulder1_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0.0119 0.0447 0.0125"
+        rpy="0 0 0" />
+      <mass
+        value="0.702" />
+      <inertia
+        ixx="0.00107"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00208"
+        iyz="0.0"
+        izz="0.00181" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder1_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0.0119 -0.0447 0.0125"
+        rpy="0 0 0" />
+      <mass
+        value="0.702" />
+      <inertia
+        ixx="0.00107"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00208"
+        iyz="0.0"
+        izz="0.00181" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder2_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0.0512 0.0264 0.00120"
+        rpy="0 0 0" />
+      <mass
+        value="0.710" />
+      <inertia
+        ixx="0.00114"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.000678"
+        iyz="0.0"
+        izz="0.00118" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder2_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0.0512 -0.0264 0.00120"
+        rpy="0 0 0" />
+      <mass
+        value="0.710" />
+      <inertia
+        ixx="0.00114"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.000678"
+        iyz="0.0"
+        izz="0.00118" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder3_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0 0.0754 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.924" />
+      <inertia
+        ixx="0.00281"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00111"
+        iyz="0.0"
+        izz="0.00248" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder3_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0 -0.0754 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.923986049465604" />
+      <inertia
+        ixx="0.00281"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00111"
+        iyz="0.0"
+        izz="0.00248" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="LElbow_inertial_macro">
+    <inertial>
+      <origin
+        xyz="-0.006 0.0268 -0.0306"
+        rpy="0 0 0" />
+      <mass
+        value="0.067" />
+      <inertia
+        ixx="0.000109"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="8.7E-05"
+        iyz="0.0"
+        izz="0.000124" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="RElbow_inertial_macro">    
+    <inertial>
+      <origin
+        xyz="-0.006 -0.0268 -0.0306"
+        rpy="0 0 0" />
+      <mass
+        value="0.067" />
+      <inertia
+        ixx="0.000109"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="8.7E-05"
+        iyz="0.0"
+        izz="0.000124" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="LArm_inertial_macro">    
+    <inertial>
+      <origin
+        xyz="0 0.0546 0.0003"
+        rpy="0 0 0" />
+      <mass
+        value="0.698" />
+      <inertia
+        ixx="0.00106"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.000705"
+        iyz="0.0"
+        izz="0.00107" />
+    </inertial>
+</xacro:macro> 
+
+<xacro:macro name="RArm_inertial_macro"> 
+    <inertial>
+      <origin
+        xyz="0 -0.0546 0.0003"
+        rpy="0 0 0" />
+      <mass
+        value="0.698" />
+      <inertia
+        ixx="0.00106"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.000705"
+        iyz="0.0"
+        izz="0.00107" />
+    </inertial>
+</xacro:macro> 
+
+
+
+</robot>

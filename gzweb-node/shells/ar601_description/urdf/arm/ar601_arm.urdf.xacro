@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="ar601_arm_macro">
+
+<link_macro name="LShoulder1"/>
+<link_macro name="LShoulder2"/>
+<link_macro name="LShoulder3"/>
+<link_macro name="LElbow"/>
+<link_macro name="LArm"/>
+
+<link_macro name="RShoulder1"/>
+<link_macro name="RShoulder2"/>
+<link_macro name="RShoulder3"/>
+<link_macro name="RElbow"/>
+<link_macro name="RArm"/>
+
+  <joint
+    name="LShoulderPitch"
+    type="revolute">
+    <origin
+      xyz="0.0081623 0.123 0.255"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="Torso" />
+    <child
+      link="LShoulder1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.83259"
+      upper="0.08726"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+  <joint
+    name="RShoulderPitch"
+    type="revolute">
+    <origin
+      xyz="0.0081623 -0.123 0.255"
+      rpy="0 0 0.18497" />
+    <parent
+      link="Torso" />
+    <child
+      link="RShoulder1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.83259"
+      upper="0.08726"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="LShoulderRoll"
+    type="revolute">
+    <origin
+      xyz="-0.05 0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder1" />
+    <child
+      link="LShoulder2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.3962"
+      upper="0.08726"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+  <joint
+    name="RShoulderRoll"
+    type="revolute">
+    <origin
+      xyz="-0.05 -0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder1" />
+    <child
+      link="RShoulder2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.08726"
+      upper="1.3962"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="LElbowPitch"
+    type="revolute">
+    <origin
+      xyz="0.04975 0.0847 0"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder2" />
+    <child
+      link="LShoulder3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34906"
+      upper="0.95993"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+  <joint
+    name="RElbowPitch"
+    type="revolute">
+    <origin
+      xyz="0.04975 -0.0847 0"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder2" />
+    <child
+      link="RShoulder3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34906"
+      upper="0.95993"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="LElbowYaw"
+    type="revolute">
+    <origin
+      xyz="0.01 0.1485 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder3" />
+    <child
+      link="LElbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57079"
+      upper="0.0523599"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+  <joint
+    name="RElbowYaw"
+    type="revolute">
+    <origin
+      xyz="0.01 -0.1485 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder3" />
+    <child
+      link="RElbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.0523599"
+      upper="1.57079"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+
+  <joint
+    name="LForearmPitch"
+    type="revolute">
+    <origin
+      xyz="-0.01 0.083 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="LElbow" />
+    <child
+      link="LArm" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.094771"
+      upper="0.087266"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+  <joint
+    name="RForearmPitch"
+    type="revolute">
+    <origin
+      xyz="-0.01 -0.083 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="RElbow" />
+    <child
+      link="RArm" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.087266"
+      upper="0.094771"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="${arm_joint_damping}"
+      friction="${arm_joint_friction}" />
+  </joint>
+
+
+  <joint_transmission_macro joint_name="LShoulderPitch"/>
+  <joint_transmission_macro joint_name="LShoulderRoll"/>
+  <joint_transmission_macro joint_name="LElbowPitch"/>
+  <joint_transmission_macro joint_name="LElbowYaw"/>
+  <joint_transmission_macro joint_name="LForearmPitch"/>
+  <joint_transmission_macro joint_name="RShoulderPitch"/>
+  <joint_transmission_macro joint_name="RShoulderRoll"/>
+  <joint_transmission_macro joint_name="RElbowPitch"/>
+  <joint_transmission_macro joint_name="RElbowYaw"/>
+  <joint_transmission_macro joint_name="RForearmPitch"/>
+
+  </xacro:macro>
+</robot>

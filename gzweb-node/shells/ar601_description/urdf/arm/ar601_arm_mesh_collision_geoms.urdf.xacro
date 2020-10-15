@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LShoulder1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LShoulder1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RShoulder1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LShoulder2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RShoulder2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LShoulder3_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LShoulder3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RShoulder3_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RShoulder3.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LElbow_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LElbow.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RElbow_collision_geom_macro">    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RElbow.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LArm_collision_geom_macro">    
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/LArm.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RArm_collision_geom_macro"> 
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/RArm.STL" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+
+
+</robot>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LPelvis_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="LHip_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="LThigh_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="LTibia_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="LAnkle_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="LFoot_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="RPelvis_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="RHip_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="RThigh_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="RTibia_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="RAnkle_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+<xacro:macro name="RFoot_inertial_macro">
+  <inertial_constant_macro />
+</xacro:macro> 
+
+</robot>

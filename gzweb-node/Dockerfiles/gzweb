@@ -1,0 +1,52 @@
+FROM gazebo:libgazebo9-bionic
+
+RUN apt-get update && apt-get upgrade -q -y && apt-get install -q -y \
+    build-essential \
+    cmake \
+    curl \
+    imagemagick \
+    libboost-all-dev \
+    libgts-dev \
+    libjansson-dev \
+    libtinyxml-dev \
+    mercurial \
+    pkg-config \
+    psmisc\
+    ssh \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
+	&& VERSION=node_11.x \	
+	&& DISTRO="$(lsb_release -s -c)" \
+	&& echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | tee /etc/apt/sources.list.d/nodesource.list \
+	&& echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/apt/sources.list.d/nodesource.list \
+	&& apt-get update && apt-get upgrade -q -y && apt-get install -q -y \
+		nodejs \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN apt-get install -q -y \
+    libgazebo9-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g n && n lts \
+	&& npm install multiparty \
+	&& npm install formidable 
+
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' \
+	&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 \
+	&& apt-get update && apt-get upgrade -q -y && apt-get install -q -y \
+		ros-melodic-ros-base \
+	&& rm -rf /var/lib/apt/lists/*
+
+### requirements.txt is located in code_editor directory, just copy it to Dockerfiles directory
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+RUN mkdir -p /home/catkin_ws/src
+RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /home/catkin_ws; catkin_make'
+
+EXPOSE 11345-11355
+EXPOSE 8080
+EXPOSE 8000
+EXPOSE 7681

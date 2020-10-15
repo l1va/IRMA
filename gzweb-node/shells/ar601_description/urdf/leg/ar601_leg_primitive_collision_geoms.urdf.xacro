@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LPelvis_collision_geom_macro">
+    <collision>
+      <origin xyz="0.000000 -0.010580 0.028437" />
+      <geometry>
+        <box size="0.045 0.08175 0.028652" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LHip_collision_geom_macro">
+    <collision>
+      <origin xyz="0.000079 0.018242 0.013873" />
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LThigh_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.062965 -0.000323 0.000692" />
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LTibia_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.053955 0.006548 -0.000592" />
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LAnkle_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.000214 -0.018536 0.013873" />
+      <geometry>
+        <box size="0.028652 0.08175 0.045"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="LFoot_collision_geom_macro">
+    <collision>
+      <origin xyz="0.02 0 -0.05275" />
+      <geometry>
+        <box size="0.234 0.134 0.1055"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RPelvis_collision_geom_macro">
+    <collision>
+      <origin xyz="0.000000 0.010580 0.028437" />
+      <geometry>
+        <box size="0.045 0.08175 0.028652" />
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RHip_collision_geom_macro">
+    <collision>
+      <origin xyz="0.000079 -0.018242 0.0138735" />
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RThigh_collision_geom_macro">
+    <collision>
+      <origin xyz="0.062965 -0.000323 0.000692" />
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RTibia_collision_geom_macro">
+    <collision>
+      <origin xyz="0.053955 0.006548 -0.000592" />
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RAnkle_collision_geom_macro">
+    <collision>
+      <origin xyz="-0.000214 -0.018536 0.013873" />
+      <geometry>
+        <box size="0.028652 0.08175 0.045"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+<xacro:macro name="RFoot_collision_geom_macro">
+    <collision>
+      <origin xyz="0.02 0 -0.05275" />
+      <geometry>
+        <box size="0.234 0.134 0.1055"/>
+      </geometry>
+    </collision>
+</xacro:macro> 
+
+</robot>

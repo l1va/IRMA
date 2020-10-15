@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_leg_macro"> 
+
+  <link_macro name="LPelvis"/>
+  <link_macro name="RPelvis"/>
+  <link_macro name="LHip"/>
+  <link_macro name="RHip"/>
+  <link_macro name="LThigh"/>
+  <link_macro name="RThigh"/>
+  <link_macro name="LTibia"/>
+  <link_macro name="RTibia"/>
+  <link_macro name="LAnkle"/>
+  <link_macro name="RAnkle"/>
+  <link_macro name="LFoot"/>
+  <link_macro name="RFoot"/>
+
+  <joint
+    name="LHipYaw"
+    type="fixed">
+    <origin
+      xyz="0.0276 0.088 -0.207"
+      rpy="0 0 0" />
+    <parent
+      link="Belly" />
+    <child
+      link="LPelvis" />
+  </joint>
+
+
+
+  <joint
+    name="LHipRoll"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LPelvis" />
+    <child
+      link="LHip" />
+  </joint>
+
+
+
+  <joint
+    name="LHipPitch"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LHip" />
+    <child
+      link="LThigh" />
+  </joint>
+
+
+
+  <joint
+    name="LKneePitch"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="LThigh" />
+    <child
+      link="LTibia" />
+  </joint>
+
+
+  <joint
+    name="LAnklePitch"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="LTibia" />
+    <child
+      link="LAnkle" />
+  </joint>
+
+
+  <joint
+    name="LAnkleRoll"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LAnkle" />
+    <child
+      link="LFoot" />
+  </joint>
+
+
+
+  <!-- RIGHT -->
+
+
+  <joint
+    name="RHipYaw"
+    type="fixed">
+    <origin
+      xyz="0.0276 -0.088 -0.207"
+      rpy="0 0 0" />
+    <parent
+      link="Belly" />
+    <child
+      link="RPelvis" />
+  </joint>
+
+
+
+  <joint
+    name="RHipRoll"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RPelvis" />
+    <child
+      link="RHip" />
+  </joint>
+
+
+
+  <joint
+    name="RHipPitch"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RHip" />
+    <child
+      link="RThigh" />
+  </joint>
+
+
+  <joint
+    name="RKneePitch"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="RThigh" />
+    <child
+      link="RTibia" />
+  </joint>
+
+
+
+  <joint
+    name="RAnklePitch"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.28"
+      rpy="0 0 0" />
+    <parent
+      link="RTibia" />
+    <child
+      link="RAnkle" />
+  </joint>
+
+
+  <joint
+    name="RAnkleRoll"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RAnkle" />
+    <child
+      link="RFoot" />
+  </joint>
+
+
+  <gazebo reference="LFoot">
+    <kd>10.0</kd>
+    <kp>1000000</kp>
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <minDepth>0.000001</minDepth>
+    <maxContacts>100</maxContacts>
+  </gazebo>
+
+  <gazebo reference="RFoot">
+    <kd>10.0</kd>
+    <kp>1000000</kp>
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <minDepth>0.000001</minDepth>
+    <maxContacts>100</maxContacts>
+  </gazebo>
+
+  </xacro:macro>
+</robot>

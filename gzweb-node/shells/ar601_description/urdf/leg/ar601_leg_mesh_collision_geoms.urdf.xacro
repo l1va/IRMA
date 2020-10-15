@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="LPelvis_collision_geom_macro">
+  <collision_mesh_macro name="LPelvis"/>
+</xacro:macro> 
+
+<xacro:macro name="LHip_collision_geom_macro">
+  <collision_mesh_macro name="LHip"/>
+</xacro:macro> 
+
+<xacro:macro name="LThigh_collision_geom_macro">
+  <collision_mesh_macro name="LThigh"/>
+</xacro:macro> 
+
+<xacro:macro name="LTibia_collision_geom_macro">
+  <collision_mesh_macro name="LTibia"/>
+</xacro:macro> 
+
+<xacro:macro name="LAnkle_collision_geom_macro">
+  <collision_mesh_macro name="LAnkle"/>
+</xacro:macro> 
+
+<xacro:macro name="LFoot_collision_geom_macro">
+  <collision_mesh_macro name="LFoot"/>
+</xacro:macro> 
+
+<xacro:macro name="RPelvis_collision_geom_macro">
+  <collision_mesh_macro name="RPelvis"/>
+</xacro:macro> 
+
+<xacro:macro name="RHip_collision_geom_macro">
+  <collision_mesh_macro name="RHip"/>
+</xacro:macro> 
+
+<xacro:macro name="RThigh_collision_geom_macro">
+  <collision_mesh_macro name="RThigh"/>
+</xacro:macro> 
+
+<xacro:macro name="RTibia_collision_geom_macro">
+  <collision_mesh_macro name="RTibia"/>
+</xacro:macro> 
+
+<xacro:macro name="RAnkle_collision_geom_macro">
+  <collision_mesh_macro name="RAnkle"/>
+</xacro:macro> 
+
+<xacro:macro name="RFoot_collision_geom_macro">
+  <collision_mesh_macro name="RFoot"/>
+</xacro:macro> 
+
+</robot>

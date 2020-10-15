@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="Neck1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/Neck1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro>  
+
+<xacro:macro name="Neck2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/Neck2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro>  
+
+<xacro:macro name="Head1_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/Head1.STL" />
+      </geometry>
+    </collision>
+</xacro:macro>  
+
+<xacro:macro name="Head2_collision_geom_macro">
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ar601_description/meshes/Head2.STL" />
+      </geometry>
+    </collision>
+</xacro:macro>  
+
+</robot>

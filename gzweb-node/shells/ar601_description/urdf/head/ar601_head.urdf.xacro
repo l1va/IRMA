@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_head_macro">
+
+  <link_macro name="Neck1"/> 
+  <link_macro name="Neck2"/> 
+  <link_macro name="Head1"/>
+  <link_macro name="Head2"/> 
+
+  <joint
+    name="Neck1Pitch"
+    type="revolute">
+    <origin
+      xyz="0.0415 0 0.271"
+      rpy="0 0 0" />
+    <parent
+      link="Torso" />
+    <child
+      link="Neck1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+
+
+  <joint
+    name="Neck2Yaw"
+    type="revolute">
+    <origin
+      xyz="-0.033 0 0.129"
+      rpy="0 0 0" />
+    <parent
+      link="Neck1" />
+    <child
+      link="Neck2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+
+
+  <joint
+    name="Head1Roll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Neck2" />
+    <child
+      link="Head1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+
+
+  <joint
+    name="Head2Pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Head1" />
+    <child
+      link="Head2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="10" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+
+  <joint_transmission_macro joint_name="Neck1Pitch"/>
+  <joint_transmission_macro joint_name="Neck2Yaw"/>
+  <joint_transmission_macro joint_name="Head1Roll"/>
+  <joint_transmission_macro joint_name="Head2Pitch"/>
+
+  </xacro:macro>
+</robot>

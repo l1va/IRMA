@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_head_macro">
+
+  <link_macro_2 name="Neck1"/> 
+  <link_macro_2 name="Neck2"/> 
+  <link_macro_2 name="Head1"/>
+  <link_macro_2 name="Head2"/> 
+
+  <joint
+    name="Neck1Pitch"
+    type="fixed">
+    <origin
+      xyz="0.0415 0 0.271"
+      rpy="0 0 0" />
+    <parent
+      link="Torso" />
+    <child
+      link="Neck1" />
+  </joint>
+
+
+  <joint
+    name="Neck2Yaw"
+    type="fixed">
+    <origin
+      xyz="-0.033 0 0.129"
+      rpy="0 0 0" />
+    <parent
+      link="Neck1" />
+    <child
+      link="Neck2" />
+  </joint>
+
+
+  <joint
+    name="Head1Roll"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Neck2" />
+    <child
+      link="Head1" />
+  </joint>
+
+
+  <joint
+    name="Head2Pitch"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Head1" />
+    <child
+      link="Head2" />
+  </joint>
+
+
+  </xacro:macro>
+</robot>

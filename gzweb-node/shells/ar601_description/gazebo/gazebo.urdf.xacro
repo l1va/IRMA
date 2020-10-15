@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="ar601">
+
+    <gazebo>
+        <!--     <plugin name="gazebo_ros_controller_manager" filename="libgazebo_ros_controller_manager.so">
+              <alwaysOn>true</alwaysOn>
+              <updateRate>1000.0</updateRate>
+            </plugin> -->
+
+        <plugin filename="libgazebo_ros_control.so" name="ros_control">
+            <robotNamespace>/ar601</robotNamespace>
+        </plugin>
+
+
+    </gazebo>
+
+</robot>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="Neck1_inertial_macro">
+    <inertial>
+      <origin
+        xyz="-0.0222927487404251 4.47895651753766E-05 0.0310409976295018"
+        rpy="0 0 0" />
+      <mass
+        value="0.657320428434859" />
+      <inertia
+        ixx="0.00102025512184757"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00120134781263084"
+        iyz="0.0"
+        izz="0.000718372081172033" />
+    </inertial>
+</xacro:macro>  
+
+<xacro:macro name="Neck2_inertial_macro">
+    <inertial>
+      <origin
+        xyz="-9.38630904016337E-06 4.42165265520866E-05 -0.0162910790688592"
+        rpy="0 0 0" />
+      <mass
+        value="0.0167205530633327" />
+      <inertia
+        ixx="6.21421984464677E-06"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="1.28553666419653E-05"
+        iyz="0.0"
+        izz="1.23400064727747E-05" />
+    </inertial>
+</xacro:macro>  
+
+<xacro:macro name="Head1_inertial_macro">
+    <inertial>
+      <origin
+        xyz="-9.38941181994821E-06 4.42605420928731E-05 -2.87270207621759E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.140258674510404" />
+      <inertia
+        ixx="0.000255527506833601"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="2.64614495249746E-05"
+        iyz="0.0"
+        izz="0.000265796055755356" />
+    </inertial>
+</xacro:macro>  
+
+<xacro:macro name="Head2_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0.0367567218407244 6.13069479271212E-05 0.0741939345619121"
+        rpy="0 0 0" />
+      <mass
+        value="5.51543814682702" />
+      <inertia
+        ixx="0.0328094469174202"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0336400080305931"
+        iyz="0.0"
+        izz="0.0379699861871773" />
+    </inertial>
+</xacro:macro>  
+
+</robot>

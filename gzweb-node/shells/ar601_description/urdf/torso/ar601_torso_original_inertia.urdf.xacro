@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<robot  name="robotis_op2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="Belly_inertial_macro">
+    <inertial>
+      <origin
+        xyz="0.0087165 3.8567E-07 -0.051657"
+        rpy="0 0 0" />
+      <mass
+        value="4.1266" />
+      <inertia
+        ixx="0.028323"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.011957"
+        iyz="0.0"
+        izz="0.033839" />
+    </inertial>
+</xacro:macro>  
+
+<xacro:macro name="Torso_inertial_macro">
+    <inertial>
+      <origin
+        xyz="-0.011272 2.1289E-05 0.16761"
+        rpy="0 0 0" />
+      <mass
+        value="17.759" /> <!-- 9 kg should be added to make 65 kg total, or leave it 56 kg if robot with no batteries--> 
+      <inertia
+        ixx="0.23995"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.21472"
+        iyz="0.0"
+        izz="0.17329" />
+    </inertial>
+</xacro:macro> 
+
+</robot>

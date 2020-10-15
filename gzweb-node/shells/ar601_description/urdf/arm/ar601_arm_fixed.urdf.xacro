@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<robot  name="ar601" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ar601_arm_macro">
+
+<link_macro name="LShoulder1"/>
+<link_macro name="LShoulder2"/>
+<link_macro name="LShoulder3"/>
+<link_macro name="LElbow"/>
+<link_macro name="LArm"/>
+
+<link_macro name="RShoulder1"/>
+<link_macro name="RShoulder2"/>
+<link_macro name="RShoulder3"/>
+<link_macro name="RElbow"/>
+<link_macro name="RArm"/>  
+
+
+  <joint
+    name="LShoulderPitch"
+    type="fixed">
+    <origin
+      xyz="0.0081623 0.123 0.255"
+      rpy="0 0 -0.18497" />
+    <parent
+      link="Torso" />
+    <child
+      link="LShoulder1" />    
+  </joint>
+
+  <joint
+    name="RShoulderPitch"
+    type="fixed">
+    <origin
+      xyz="0.0081623 -0.123 0.255"
+      rpy="0 0 0.18497" />
+    <parent
+      link="Torso" />
+    <child
+      link="RShoulder1" />    
+  </joint>
+
+
+  <joint
+    name="LShoulderRoll"
+    type="fixed">
+    <origin
+      xyz="-0.05 0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder1" />
+    <child
+      link="LShoulder2" />
+  </joint>
+
+  <joint
+    name="RShoulderRoll"
+    type="fixed">
+    <origin
+      xyz="-0.05 -0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder1" />
+    <child
+      link="RShoulder2" />
+  </joint>
+
+
+  <joint
+    name="LElbowPitch"
+    type="fixed">
+    <origin
+      xyz="0.04975 0.0847 0"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder2" />
+    <child
+      link="LShoulder3" />
+  </joint>
+
+  <joint
+    name="RElbowPitch"
+    type="fixed">
+    <origin
+      xyz="0.04975 -0.0847 0"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder2" />
+    <child
+      link="RShoulder3" />
+  </joint>
+
+
+  <joint
+    name="LElbowYaw"
+    type="fixed">
+    <origin
+      xyz="0.01 0.1485 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="LShoulder3" />
+    <child
+      link="LElbow" />
+  </joint>
+
+  <joint
+    name="RElbowYaw"
+    type="fixed">
+    <origin
+      xyz="0.01 -0.1485 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="RShoulder3" />
+    <child
+      link="RElbow" />
+  </joint>
+
+
+  <joint
+    name="LForearmPitch"
+    type="fixed">
+    <origin
+      xyz="-0.01 0.083 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="LElbow" />
+    <child
+      link="LArm" />
+  </joint>  
+  
+  <joint
+    name="RForearmPitch"
+    type="fixed">
+    <origin
+      xyz="-0.01 -0.083 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="RElbow" />
+    <child
+      link="RArm" />
+  </joint>
+
+  </xacro:macro>
+</robot>
