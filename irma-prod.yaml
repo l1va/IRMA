@@ -21,7 +21,7 @@ services:
       - ./gzweb-node/shells/ar601_description:/home/gzweb/http/client/assets/ar601_description:ro
       - ./editor-user:/home/editor:rw
       - ./gzweb-node/project_x:/home/catkin_ws/src/project_x:rw
-      - ./code_editor/code_editor/env_settings.py:/home/code_editor/code_editor/env_settings.py:ro
+      - ./code_editor/code_editor/env_settings.py:/home/code_editor/code_editor/env_settings.py
     networks:
       - net
   robo-1.1:

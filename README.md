@@ -23,10 +23,10 @@ Dockerfiles:
 * **robo-node-ar601** - the image are built from ros-melodic-gz-base with code of a AR601
 * **robo-node-yefan** - the image are built from ros-melodic-gz-base with code of a yefan
 
-There are compose files to run containers:
+There is compose file to run containers:
 
-* **ar-compose.yaml** - to run ar601 simulator
-* **yefan-compose.yaml** - to run yefan simulator
+* **irma-prod.yaml** - to run ar601 simulator
+
 
 ![](http://cordelianew.university.innopolis.ru/gitea/robolab/IRMA/raw/branch/editor/img/irma.png)
 ### Building and deploying a docker container
@@ -38,23 +38,13 @@ There are compose files to run containers:
 	````
 
 
-
-2. Preparation
-
-Build necessary images
-
-example:
+2. RUN simulator
 
 	```bash
-	docker build -f gzweb -t gzweb:1.1 . 
-	```
-
-It needs to edit compose files according to your environment. 
-
-3. RUN simulator
-
-	```bash
-	docker-compose -f ar-compose.yaml up -d
+	docker-compose -f irma-prod.yaml up -d
     ```
 
+3. Open browser localhost:8080
+
+See compose file to edit settings
 

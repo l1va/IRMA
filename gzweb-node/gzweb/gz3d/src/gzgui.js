@@ -1184,15 +1184,15 @@ $(function () {
     }
   });
 
-  $('#reset-model1').click(function () {
+  $('#reset-model').click(function () {
     globalEmitter.emit('reset', 'model');
     globalEmitter.emit('closeTabs', false);
   });
-  $('#reset-world1').click(function () {
+  $('#reset-world').click(function () {
     globalEmitter.emit('reset', 'world');
     globalEmitter.emit('closeTabs', false);
   });
-  $('#reset-view1').click(function () {
+  $('#reset-view').click(function () {
     globalEmitter.emit('view_reset');
     globalEmitter.emit('closeTabs', false);
   });
