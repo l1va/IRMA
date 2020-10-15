@@ -1,0 +1,46 @@
+version: '2.2'
+services:
+  gzweb-node-yefan:
+    image: robolab.innopolis.university:5000/gzweb-node:latest
+
+    restart: on-failure
+    depends_on: 
+      - robo-yefan
+
+    mem_limit: 1G
+    ports:
+      - '8003:8003'
+      - '8081:8080'
+    entrypoint: /start.sh
+    environment:
+      - 'ROS_MASTER_URI=http://robo-yefan:11346'
+      - 'GAZEBO_MASTER_URI=http://robo-yefan:11345'
+      - 'DOMAIN=localhost'
+      - 'PORT_EDITOR=8003'
+    volumes:
+      - ./gzweb-node/shells/yefan_description:/home/gzweb/http/client/assets/yefan_description:ro
+      - ./editor-user:/home/editor:rw
+      - ./gzweb-node/project_x:/home/catkin_ws/src/project_x:rw
+      - ./code_editor/code_editor/env_settings.py:/home/code_editor/code_editor/env_settings.py:ro
+    networks:
+      - net
+  robo-yefan:
+    image: robolab.innopolis.university:5000/robo-yefan:latest
+
+    entrypoint: /home/robo/start.sh
+
+    environment:
+      - 'ROS_MASTER_URI=http://localhost:11346'
+      - 'GAZEBO_MASTER_URI=http://localhost:11345'
+
+    volumes:
+      - ./gzweb-node/ros-robo/yefan:/home/robo:ro
+
+
+    mem_limit: 4G
+
+    networks:
+      - net
+
+networks:
+  net:
