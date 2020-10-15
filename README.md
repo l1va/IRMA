@@ -28,7 +28,7 @@ There are compose files to run containers:
 * **ar-compose.yaml** - to run ar601 simulator
 * **yefan-compose.yaml** - to run yefan simulator
 
-![](http://cordelianew.university.innopolis.ru/gitea/robolab/IRMA/raw/branch/editor/img/irma.png)
+![](img/irma.png)
 ### Building and deploying a docker container
 
 1. Clone project:
